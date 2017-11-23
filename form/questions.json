@@ -1,0 +1,47 @@
+[
+	{
+		"legend": "Your car, your license and your policy",
+		"questions": [
+			{
+				"type": "text",
+				"placeholder": "e.g. SL07YCV or Mazda 6",
+				"label": "What vehicle would you like to insure?",
+				"hint": "Hint: having trouble finding a registration number? Try looking for make and model instead."
+            }, {
+				"type": "text",
+				"placeholder": "e.g. CH13NH or 27 Egerton St",
+				"label": "What is your address?"
+            }, {
+				"type": "date",
+				"placeholder": "DD/MM/YYYY",
+				"helpText": "Your age is one of the factors used by insurers to calculate your premium.",
+				"label": "What's your date of birth?"
+            }
+        ]
+    }, {
+		"legend": "About your policy",
+		"questions": [
+			{
+				"type": "tel",
+				"placeholder": "e.g. £175,000",
+				"label": "How much cover do you need?",
+				"hint": "This is the amount the policy will pay out in the event of a claim.",
+				"helpText": "You need to choose an amount that reflects yours and dependents' financial needs. |When choosing your sum insured, there are several points to consider, mainly relating to your income and outgoings. So, you could start by totting up how much your family needs over the course of a year to pay for major bills such as your mortgage or rent, utility and council tax bills, any loan repayments, groceries and other household expenditure.",
+				"id": "coverAmount"
+            }, {
+				"type": "tel",
+				"placeholder": "e.g. 25",
+				"label": "How long do you need your policy to last?",
+				"hint": "This is the number of years you will be protected by the policy.",
+				"id": "coverPeriod"
+            }
+        ]
+    }, {
+		"questions": [
+			{
+				"type": "submit",
+				"value": "Proceed"
+            }
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+</head>
+
+<body>
+
+    <main>
+        <h1>API test page</h1>
+
+        <script>
+            var creditCardsData = {
+                "offset": 0,
+                "limit": 11,
+                "sort": [
+                    {
+                        "name": "code",
+                        "order": "asc"
+                   }
+               ],
+                "filters": [
+                    {
+                        "name": "category.name",
+                        "values": ["cat_msm_credit_card_goal_06"],
+                        "filterType": "ALL"
+                   }
+               ]
+            };
+
+            // Credit cards
+            //var cardsHref = 'https://moneysupermarket-dev.apigee.net/gb/product/v1/search/listing-products?facets=true';
+            //ajax('POST',href,creditCardsData,logResponse);
+
+            // Vehicle lookup
+            var regHref = 'http://localhost:8000/gb/reference-data/v0/vehicles?registrationNumber=LWR82H';
+
+            var philRequest = new Request(regHref, {
+                method: 'GET',
+                mode: 'cors',
+                cache: 'default'
+            });
+
+            fetch(philRequest)
+                .then(function(response){
+                    return response.json();
+                }).then(function(data){
+                    console.log(data);
+            })
+            .catch(function(error){
+                console.log(error.message);
+            });
+
+            // Energy product variants
+            //ajax('POST','https://moneysupermarket-dev.apigee.net/gb/product/v1/search/energy-product-variants?facets=true',null,logResponse);
+        </script>
+
+
+    </main>
+
+</body>
+
+</html>

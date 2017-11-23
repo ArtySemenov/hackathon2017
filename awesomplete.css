@@ -8,12 +8,14 @@
 }
 
 .awesomplete {
+/*
     display: inline-block;
     position: relative;
+*/
 }
 
 .awesomplete > input {
-    display: block;
+/*    display: block;*/
 }
 
 .awesomplete > ul {
@@ -58,20 +60,6 @@
 }
 
 	/* Pointer */
-	.awesomplete > ul:before {
-		content: "";
-		position: absolute;
-		top: -.43em;
-		left: 1em;
-		width: 0; height: 0;
-		padding: .4em;
-		background: white;
-		border: inherit;
-		border-right: 0;
-		border-bottom: 0;
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
-	}
 
 	.awesomplete > ul > li {
 		position: relative;

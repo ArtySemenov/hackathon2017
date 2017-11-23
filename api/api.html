@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Address and reg lookup</title>
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link type="text/css" rel="stylesheet" property="stylesheet" href="/src/assets/msm/css/global.css">
+    <link type="text/css" rel="stylesheet" property="stylesheet" href="/sandbox/central-form/style.css">
+    <style>
+        /* Styles for the data replay list */
+        .api-replay {
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form class="central-form">
+            <h1 class="form-title">API connections</h1>
+            <fieldset>
+                <ol>
+                    <li>
+                        <div>
+                            <label for="postcode">Enter your postcode</label>
+                        </div>
+                        <div class="form-address-lookup">
+                            <input type="text" id="postcode" placeholder="e.g. CH53UZ" />
+                            <button id="addressBtn" class="btn">Find address</button>
+                        </div>
+                        <div class="api-replay"></div>
+                    </li>
+                    <li>
+                        <div>
+                            <label for="reg">Enter your registration number</label>
+                        </div>
+                        <div class="form-address-lookup">
+                            <input type="text" id="reg" placeholder="e.g. LWR82H" />
+                            <button id="vehicleBtn" class="btn">Find vehicle</button>
+                        </div>
+                        <div class="vehicle-replay"></div>
+                    </li>
+                </ol>
+            </fieldset>
+        </form>
+    </main>
+    <script>
+        // This defines your AJAX function.
+        var ajax = function (method, url, data, callback, noproxy) {
+            var request = new XMLHttpRequest();
+            request.open(method, url, true);
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    var response = JSON.parse(request.responseText);
+                    callback(response);
+                }
+            }
+            request.send();
+        };
+
+        // Vehicle lookup
+        var getVehicleFromReg = function (reg) {
+            var regInput = document.getElementById('input-0-0');
+            var proxyRef = 'URL GOES HERE' + regInput.value;
+
+            // Updates the list of results in your list wrapper element. <-- update awesomplete array here
+            var updateAwsompleteArray = function (obj) {
+
+                // If you want to hide your initial inputs, you'd do it here
+
+                // Resets the content of the list wrapper
+                apiReplay.innerHTML = '';
+
+                // Makes a new list element
+                var ol = document.createElement('ol');
+
+                // Adds the list element to the list wrapper
+                apiReplay.appendChild(ol);
+
+                // For each item in the returned data from the API do something
+                obj.vehicles.forEach(function (d) {
+                    console.log(d);
+                    //APPEND ARRAY LIST AWESOMPLETE
+                    });
+                });
+            };
+            ajax('GET', proxyRef, null, updateReplay);
+        };
+
+        // This fires your reg lookup function on click
+        document.getElementById('vehicleBtn').addEventListener('click', function (evt) {
+            evt.preventDefault();
+            getVehicleFromReg();
+        });
+    </script>
+</body>
+
+</html>
