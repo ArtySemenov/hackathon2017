@@ -31,5 +31,4 @@
 	} else {
 		document.getElementById("cp-result").style.display = "none";
 	}
-
   });
