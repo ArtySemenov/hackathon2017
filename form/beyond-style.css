@@ -760,6 +760,20 @@
 	color: hsl(358, 85%, 52%);
 }
 
+.addy-result {
+	display: block;
+	font-size: 14px !important;
+	font-weight: bold !important;
+	padding: 15px !important;
+	color: #566266;
+	border: solid 0.2px #566266 !important;
+	margin-top: 15px;
+		transition: top 0.2s ease-in-out;
+
+
+
+}
+
 .central-form .form-message-error a:hover,
 .central-form .form-message-error a:focus {
 	color: #c61016;
@@ -819,6 +833,7 @@
 	top: 50px;
 	width: 100px;
 	box-shadow: 0 1px 2px 0 #c6cacc, 0 1px 2px 0 #ebf0f2;
+	overflow: scroll;
 }
 
 #ui-id-1>li {

@@ -23,13 +23,16 @@
 			<legend>Your car, your license and your policy</legend>
 			<ol>
 				<li>
-					<div><label for="input-0-0">What vehicle would you like to insure?</label><small class="form-hint">Hint: having trouble finding a registration number? Try looking for make and model instead.</small></div>
-					<div><input minChars="2" maxItems="5" type="text" id="input-0-0" placeholder="e.g. SL07YCV or Mazda 6"></div>
+					<div><label for="input-0-0">What vehicle would you like to insure?</label><small class="form-hint"><span style="font-weight: bold;">Hint:</span> having trouble finding a registration number? Try looking for make and model instead.</small></div>
+					<div><input minChars="2" maxItems="5" type="text" id="input-0-0" placeholder="e.g. 'SL07YCV' or 'Mazda 6'"></div>
 				</li>
 				<li>
-					<div><label name="cp-result" id="cp-result">What's your address?</label></div>
+					<div><label for="cp-search" id="addy">What is your address?</label></div>
 					<div><input name="cp-search" id="cp-search" type="text" placeholder="e.g 'CH5 3UZ' or 'Moneysupermarket'" value="" autocomplete="off">
+
+					<label class="addy-result" style="display: none;" name="cp-result" id="cp-result" >&nbsp;</label>
 					</div>
+
 
 				</li>
 				<li>

@@ -2662,11 +2662,11 @@ $.widget( "ui.autocomplete", {
 				}
 
 				// Announce the value in the liveRegion
-				label = ui.item.attr( "aria-label" ) || item.value;
-				if ( label && $.trim( label ).length ) {
-					this.liveRegion.children().hide();
-					$( "<div>" ).text( label ).appendTo( this.liveRegion );
-				}
+//				label = ui.item.attr( "aria-label" ) || item.value;
+//				if ( label && $.trim( label ).length ) {
+//					this.liveRegion.children().hide();
+//					$( "<div>" ).text( label ).appendTo( this.liveRegion );
+//				}
 			},
 			menuselect: function( event, ui ) {
 				var item = ui.item.data( "ui-autocomplete-item" ),
@@ -3060,8 +3060,8 @@ $.widget( "ui.autocomplete", $.ui.autocomplete, {
 		} else {
 			message = this.options.messages.noResults;
 		}
-		this.liveRegion.children().hide();
-		$( "<div>" ).text( message ).appendTo( this.liveRegion );
+//		this.liveRegion.children().hide();
+//		$( "<div>" ).text( message ).appendTo( this.liveRegion );
 	}
 } );
 
